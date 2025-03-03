@@ -9,13 +9,13 @@ This repository compares **Denoising Diffusion Probabilistic Models (DDPMs)** an
 
 A standard GAN involves two players: a **Generator** $G$ and a **Discriminator** $D$. The goal is to solve:
 
-
+$$
 \begin{align}
-\min_{G} \max_{D} \mathbb{E}_{\mathbf{x} \sim p_{\text{data}}(\mathbf{x})}[\log D(\mathbf{x})]
-\;+\;
-\mathbb{E}_{\mathbf{z} \sim p(\mathbf{z})}[\log (1 - D(G(\mathbf{z})))].
+   \min_{G} \max_{D} \mathbb{E}_{\mathbf{x} \sim p_{\text{data}}(\mathbf{x})}[\log D(\mathbf{x})]
+   \;+\;
+   \mathbb{E}_{\mathbf{z} \sim p(\mathbf{z})}[\log (1 - D(G(\mathbf{z})))].
 \end{align}
-
+$$
 
 - $\mathbf{x}$ is a real image from the dataset.
 - $\mathbf{z}$ is random noise.
