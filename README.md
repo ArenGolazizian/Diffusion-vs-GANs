@@ -5,34 +5,23 @@ This repository compares **Denoising Diffusion Probabilistic Models (DDPMs)** an
 
 ## 1. Mathematical Overview
 
+## 1. Mathematical Overview
+
 ### 1.1 GAN Objective
 
-A standard GAN involves two players: a **Generator** $ G $ and a **Discriminator** $ D $. The goal is to solve:
-
-$$
+\[
 \min_{G} \max_{D} \mathbb{E}_{\mathbf{x} \sim p_{\text{data}}(\mathbf{x})}[\log D(\mathbf{x})]
 \;+\;
 \mathbb{E}_{\mathbf{z} \sim p(\mathbf{z})}[\log (1 - D(G(\mathbf{z})))].
-$$
-
-- $ \mathbf{x} $ is a real image from the dataset.
-- $ \mathbf{z} $ is random noise.
-- $ G(\mathbf{z}) $ is the generated (fake) image.
-- $ D(\mathbf{x}) $ outputs the probability that $ \mathbf{x} $ is real.
+\]
 
 ### 1.2 DDPM Objective
 
-A DDPM gradually **diffuses** data by adding noise step-by-step and then **denoises** in reverse. Training is done by matching predicted noise $ \epsilon_\theta(\mathbf{x}_t, t) $ to the actual noise $ \epsilon $ at each step $ t $:
-
-$$
+\[
 \mathcal{L}(\theta) = \mathbb{E}_{t, \mathbf{x}_0, \epsilon}\Big[
 \|\epsilon - \epsilon_\theta(\sqrt{\bar{\alpha}_t}\,\mathbf{x}_0 + \sqrt{1-\bar{\alpha}_t}\,\epsilon,\, t)\|^2
 \Big].
-$$
-
-During sampling, we iteratively remove noise from an initial Gaussian sample $ \mathbf{x}_T \sim \mathcal{N}(\mathbf{0}, \mathbf{I}) $ to recover $ \mathbf{x}_0 $.
-
----
+\]
 
 ## 2. Implemented Models
 
@@ -43,7 +32,7 @@ During sampling, we iteratively remove noise from an initial Gaussian sample $ \
 
 All models use **FashionMNIST** as the training dataset, resized to $32 \times 32$ and normalized to $[-1,1]$.
 
----
+
 
 ## 3. Results
 
