@@ -12,8 +12,7 @@ A standard GAN involves two players: a **Generator** $G$ and a **Discriminator**
 $$
 \begin{align}
    \min_{G} \max_{D} \mathbb{E}_{\mathbf{x} \sim p_{\text{data}}(\mathbf{x})}[\log D(\mathbf{x})]
-   \;+\;
-   \mathbb{E}_{\mathbf{z} \sim p(\mathbf{z})}[\log (1 - D(G(\mathbf{z})))].
+   + \mathbb{E}_{\mathbf{z} \sim p(\mathbf{z})}[\log (1 - D(G(\mathbf{z})))].
 \end{align}
 $$
 
