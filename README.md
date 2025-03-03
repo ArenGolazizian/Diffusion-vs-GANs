@@ -7,7 +7,7 @@ This repository compares **Denoising Diffusion Probabilistic Models (DDPMs)** an
 
 ### 1.1 GAN Objective
 
-A standard GAN involves two players: a **Generator** $ G $ and a **Discriminator** $ D $. The goal is to solve:
+A standard GAN involves two players: a **Generator** $ G $ and a **Discriminator** $D$. The goal is to solve:
 
 $$
 \min_{G} \max_{D} \mathbb{E}_{\mathbf{x} \sim p_{\text{data}}(\mathbf{x})}[\log D(\mathbf{x})]
