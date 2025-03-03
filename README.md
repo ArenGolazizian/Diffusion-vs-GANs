@@ -13,9 +13,9 @@ $$\min_{G} \max_{D} \mathbb{E}_{\mathbf{x} \sim p_{\text{data}}(\mathbf{x})}[\lo
 \;+\;\mathbb{E}_{\mathbf{z} \sim p(\mathbf{z})}[\log (1 - D(G(\mathbf{z})))].$$
 
 - $\mathbf{x}$ is a real image from the dataset.
-- $ \mathbf{z} $ is random noise.
-- $ G(\mathbf{z}) $ is the generated (fake) image.
-- $ D(\mathbf{x}) $ outputs the probability that $ \mathbf{x} $ is real.
+- $\mathbf{z}$ is random noise.
+- $G(\mathbf{z})$ is the generated (fake) image.
+- $D(\mathbf{x})$ outputs the probability that $\mathbf{x}$ is real.
 
 ### 1.2 DDPM Objective
 
