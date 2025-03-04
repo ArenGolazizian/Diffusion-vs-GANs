@@ -28,7 +28,7 @@ A DDPM gradually **diffuses** data by adding noise step-by-step and then **denoi
 \Big].
 ```
 
-During sampling, we iteratively remove noise from an initial Gaussian sample $ \mathbf{x}_T \sim \mathcal{N}(\mathbf{0}, \mathbf{I}) $ to recover $ \mathbf{x}_0 $.
+During sampling, we iteratively remove noise from an initial Gaussian sample $\mathbf{x}_T \sim \mathcal{N}(\mathbf{0}, \mathbf{I})$ to recover $\mathbf{x}_0$.
 
 ## 2. Implemented Models
 
