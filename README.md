@@ -9,10 +9,10 @@ This repository compares **Denoising Diffusion Probabilistic Models (DDPMs)** an
 
 A standard GAN involves two players: a **Generator** $G$ and a **Discriminator** $D$. The goal is to solve:\
 
-$$
+```math
 \min_{\theta} \max_{\phi} V(G_\theta, D_\phi) = \mathbb{E}_{\mathbf{x} \sim \textbf{p}_{\textrm{data}}}[\log D_\phi(\textbf{x})] + 
 \mathbb{E}_{\mathbf{z} \sim p(\textbf{z})}[\log (1-D_\phi(G_\theta(\textbf{z})))]
-$$
+```
 
 
 
