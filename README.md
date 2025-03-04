@@ -14,20 +14,19 @@ A standard GAN involves two players: a **Generator** $G$ and a **Discriminator**
 \mathbb{E}_{\mathbf{z} \sim p(\textbf{z})}[\log (1-D_\phi(G_\theta(\textbf{z})))]
 ```
 - **$\mathbf{x}$**: A real image sampled from the dataset, i.e., $\mathbf{x} \sim p_{\text{data}}$.
-- **\( \mathbf{z} \)**: Random noise sampled from a prior distribution, i.e., \( \mathbf{z} \sim p(\mathbf{z}) \).
-- **\( G_{\theta}(\mathbf{z}) \)**: The generated (fake) image produced by the generator \( G_{\theta} \).
-- **\( D_{\phi}(\mathbf{x}) \)**: The probability output by the discriminator that \( \mathbf{x} \) is a real image.
-- **\( D_{\phi}(G_{\theta}(\mathbf{z})) \)**: The probability output by the discriminator that the generated image \( G_{\theta}(\mathbf{z}) \) is real.
+- **$\mathbf{z}$**: Random noise sampled from a prior distribution, i.e., $\mathbf{z} \sim p(\mathbf{z})$.
+- **$G_{\theta}(\mathbf{z})$**: The generated (fake) image produced by the generator $G_{\theta}$.
+- **$D_{\phi}(\mathbf{x})$**: The probability output by the discriminator that $\mathbf{x}$ is a real image.
+- **$D_{\phi}(G_{\theta}(\mathbf{z}))$**: The probability output by the discriminator that the generated image $G_{\theta}(\mathbf{z})$ is real.
 
 ### 1.2 DDPM Objective
 
 A DDPM gradually **diffuses** data by adding noise step-by-step and then **denoises** in reverse. Training is done by matching predicted noise $\epsilon_\theta(\mathbf{x}_t, t)$ to the actual noise $\epsilon$ at each step $t$:
-
-$$
+```math
 \mathcal{L}(\theta) = \mathbb{E}_{t, \mathbf{x}_0, \epsilon}\Big[
 \|\epsilon - \epsilon_\theta(\sqrt{\bar{\alpha}_t}\,\mathbf{x}_0 + \sqrt{1-\bar{\alpha}_t}\,\epsilon,\, t)\|^2
 \Big].
-$$
+```
 
 During sampling, we iteratively remove noise from an initial Gaussian sample $ \mathbf{x}_T \sim \mathcal{N}(\mathbf{0}, \mathbf{I}) $ to recover $ \mathbf{x}_0 $.
 
