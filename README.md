@@ -13,13 +13,11 @@ A standard GAN involves two players: a **Generator** $G$ and a **Discriminator**
 \min_{\theta} \max_{\phi} V(G_\theta, D_\phi) = \mathbb{E}_{\mathbf{x} \sim \textbf{p}_{\textrm{data}}}[\log D_\phi(\textbf{x})] + 
 \mathbb{E}_{\mathbf{z} \sim p(\textbf{z})}[\log (1-D_\phi(G_\theta(\textbf{z})))]
 ```
-
-
-
-- $\mathbf{x}$ is a real image from the dataset.
-- $\mathbf{z}$ is random noise.
-- $G(\mathbf{z})$ is the generated (fake) image.
-- $D(\mathbf{x})$ outputs the probability that $\mathbf{x}$ is real.
+- **$\mathbf{x}$**: A real image sampled from the dataset, i.e., $\mathbf{x} \sim p_{\text{data}}$.
+- **\( \mathbf{z} \)**: Random noise sampled from a prior distribution, i.e., \( \mathbf{z} \sim p(\mathbf{z}) \).
+- **\( G_{\theta}(\mathbf{z}) \)**: The generated (fake) image produced by the generator \( G_{\theta} \).
+- **\( D_{\phi}(\mathbf{x}) \)**: The probability output by the discriminator that \( \mathbf{x} \) is a real image.
+- **\( D_{\phi}(G_{\theta}(\mathbf{z})) \)**: The probability output by the discriminator that the generated image \( G_{\theta}(\mathbf{z}) \) is real.
 
 ### 1.2 DDPM Objective
 
