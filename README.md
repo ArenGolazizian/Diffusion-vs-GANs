@@ -9,7 +9,10 @@ This repository compares **Denoising Diffusion Probabilistic Models (DDPMs)** an
 
 A standard GAN involves two players: a **Generator** $G$ and a **Discriminator** $D$. The goal is to solve:
 
-$\min_{G} \max_{D} \mathbb{E}_{\mathbf{x} \sim p_{\text{data}}(\mathbf{x})}[\log D(\mathbf{x})] + \mathbb{E}_{\mathbf{z} \sim p(\mathbf{z})}[\log (1 - D(G(\mathbf{z})))].$
+$$
+\min_{G} \max_{D} \mathbb{E}_{\mathbf{x} \sim p_{\text{data}}(\mathbf{x})}[\log D(\mathbf{x})] + \mathbb{E}_{\mathbf{z} \sim p(\mathbf{z})}[\log (1 - D(G(\mathbf{z})))].$$
+$$
+
 
 - $\mathbf{x}$ is a real image from the dataset.
 - $\mathbf{z}$ is random noise.
@@ -18,7 +21,7 @@ $\min_{G} \max_{D} \mathbb{E}_{\mathbf{x} \sim p_{\text{data}}(\mathbf{x})}[\log
 
 ### 1.2 DDPM Objective
 
-A DDPM gradually **diffuses** data by adding noise step-by-step and then **denoises** in reverse. Training is done by matching predicted noise $ \epsilon_\theta(\mathbf{x}_t, t) $ to the actual noise $ \epsilon $ at each step $ t $:
+A DDPM gradually **diffuses** data by adding noise step-by-step and then **denoises** in reverse. Training is done by matching predicted noise $\epsilon_\theta(\mathbf{x}_t, t)$ to the actual noise $\epsilon$ at each step $t$:
 
 $$
 \mathcal{L}(\theta) = \mathbb{E}_{t, \mathbf{x}_0, \epsilon}\Big[
