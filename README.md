@@ -2,6 +2,7 @@
 
 This repository compares **Denoising Diffusion Probabilistic Models (DDPMs)** and **Generative Adversarial Networks (GANs)** on the FashionMNIST dataset. Both methods aim to generate realistic images from noise, but they do so in fundamentally different ways.
 
+**Note**: All implementations and analyses are located in notebooks/DDPM-vs-GANs.ipynb.
 
 ## 1. Mathematical Overview
 
@@ -74,97 +75,11 @@ All models use **FashionMNIST** as the training dataset, resized to $32 \times 3
 3. **Conditioning**  
    - Both models can be conditioned on class labels to generate class-specific images (cGAN, Conditional DDPM).
 
+## References
+- Ho, J., Jain, A., & Abbeel, P. (2020). Denoising Diffusion Probabilistic Models. arXiv:2006.11239
 
+- Dhariwal, P., & Nichol, A. (2021). Diffusion Models Beat GANs on Image Synthesis. arXiv:2105.05233
 
-## 5. How to Use
+- Goodfellow, I., Pouget-Abadie, J., Mirza, M., Xu, B., Warde-Farley, D., Ozair, S., Courville, A., & Bengio, Y. (2014). Generative Adversarial Nets. NeurIPS 2014
 
-### 5.1 Clone the Repository
-
-Clone the repository to your local machine using Git:
-
-```bash
-git clone https://github.com/YourUsername/Diffusion_vs_GANs.git
-cd Diffusion_vs_GANs
-```
-
-### 5.2 Install Dependencies
-
-Install the required libraries by running:
-
-```bash
-pip install -r requirements.txt
-```
-
-This will install PyTorch, torchvision, NumPy, tqdm, matplotlib, einops, and any other libraries listed in the file.
-
-### 5.3 Project Structure
-
-The repository is organized as follows:
-
-```
-Diffusion_vs_GANs/
-├── data/
-│   └── load_data.py         # Data loading and preprocessing functions.
-├── models/
-│   ├── gan.py               # GAN model implementation.
-│   ├── cgan.py              # Conditional GAN model implementation.
-│   ├── ddpm.py              # DDPM model implementation.
-│   └── cddpm.py             # Conditional DDPM model implementation.
-├── scripts/
-│   ├── train_gan.py         # Training script for GAN.
-│   ├── train_cgan.py        # Training script for Conditional GAN.
-│   ├── train_ddpm.py        # Training script for DDPM.
-│   └── train_cddpm.py       # Training script for Conditional DDPM.
-├── utils/
-│   └── visualization.py     # Utility functions for plotting images and loss curves.
-├── notebooks/
-│   └── Diffusion_vs_GANs.ipynb  # Jupyter Notebook for experimentation.
-├── results/                 # Directory to store generated samples, logs, and plots.
-├── requirements.txt         # List of dependencies.
-└── README.md                # This file.
-```
-
-### 5.4 Running the Code
-
-It’s important to run the training scripts from the project root using the module flag `(-m)`. This ensures that Python sets up the correct module paths. Here’s how to run each training script:
-
-- **Train the GAN:**
-
-  ```bash
-  python -m scripts.train_gan --epochs 10 --batch_size 64 --img_size 32
-  ```
-
-- **Train the Conditional GAN (cGAN):**
-
-  ```bash
-  python -m scripts.train_cgan --epochs 10 --batch_size 128 --img_size 32 --class_label 0
-  ```
-
-- **Train the DDPM:**
-
-  ```bash
-  python -m scripts.train_ddpm --epochs 10 --batch_size 8 --img_size 32
-  ```
-
-- **Train the Conditional DDPM:**
-
-  ```bash
-  python -m scripts.train_cddpm --epochs 10 --batch_size 8 --img_size 32 --class_label 0
-  ```
-
-### 5.5 Viewing Results
-
-- **Generated Images:**  
-  After training, generated sample images are saved in the **results/** folder. For example, GAN samples are saved as `results/gan_samples.png`.
-
-- **Loss Curves and Logs:**  
-  Training logs and loss curves (if implemented) will also be saved in the **results/** folder. You can open these images to inspect the training progress.
-
-- **Interactive Experimentation:**  
-  You can also use the provided Jupyter Notebook in the **notebooks/** folder for interactive experimentation and visualization:
-  
-  ```bash
-  jupyter notebook notebooks/Diffusion_vs_GANs.ipynb
-  ```
-
-This notebook is ideal for testing different configurations, visualizing intermediate results, and comparing the performance of the models.
+- Xiao, H., Rasul, K., & Vollgraf, R. (2017). Fashion-MNIST: a Novel Image Dataset for Benchmarking Machine Learning Algorithms. arXiv:1708.07747
