@@ -2,7 +2,7 @@
 
 This repository compares **Denoising Diffusion Probabilistic Models (DDPMs)** and **Generative Adversarial Networks (GANs)** on the FashionMNIST dataset. Both methods aim to generate realistic images from noise, but they do so in fundamentally different ways.
 
-**Note**: All implementations and analyses are located in notebooks/DDPM-vs-GANs.ipynb.
+**Note**: All implementations and analyses are located in `notebooks/DDPM-vs-GANs.ipynb`.
 
 ## 1. Mathematical Overview
 
